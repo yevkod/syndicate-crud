@@ -27,14 +27,6 @@ const Login = () => {
       });
   };
 
-  const signUpWithGoogle = () => {
-    signInWithPopup(auth, googleProvider).then((response: any) => {
-      console.log(response.user);
-      sessionStorage.setItem("Token", response.user.accessToken);
-      router.push("/home");
-    });
-  };
-
   useEffect(() => {
     const token = sessionStorage.getItem("Token");
     token ? router.push("/home") : "";
@@ -73,13 +65,6 @@ const Login = () => {
             Sign In
           </button>
           <br />
-          <br />
-          <button
-            onClick={signUpWithGoogle}
-            className="bg-blue-500 text-white p-2 rounded w-full"
-          >
-            Sign Up with Google
-          </button>
         </form>
       </div>
     </div>
