@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { screen, fireEvent, render } from "@testing-library/react";
-import Home from "./home";
+import Home from "../../pages/home";
 import mockRouter from "next-router-mock";
 
 jest.mock("next/navigation", () => require("next-router-mock"));
