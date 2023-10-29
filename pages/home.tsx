@@ -24,9 +24,12 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
+    router.push('/home');
+  }, []);
+
+  useEffect(() => {
     const token = sessionStorage.getItem("Token");
     token ? getData() : router.push("/register");
-    
   }, []);
 
   const addData = () => {
